@@ -61,9 +61,7 @@ navBarFifth.textContent = siteContent['nav']['nav-item-5'];
 let navBarSixth = document.querySelector('nav a:nth-child(6)');
 navBarSixth.textContent = siteContent['nav']['nav-item-6'];
 
-// const navEl = document.querySelectorAll('nav a');
-
-
+//added elements to nav bar
 const firstEl = document.createElement('p');
 firstEl.textContent = 'Example 1';
 const nav = document.querySelector('nav');
@@ -74,16 +72,11 @@ nav.appendChild(secondEl);
 nav.prepend(firstEl);
 nav.style.color = 'green';
 
-
-navBarFirst.style.color = 'green';
-navBarSecond.style.color = 'green';
-navBarThird.style.color = 'green';
-navBarFourth.style.color = 'green';
-navBarFifth.style.color = 'green';
-navBarSixth.style.color = 'green';
-
-// let navBar = document.querySelectorAll('a');
-// navBar.forEach((item, i) => item.textContent = object.values(siteContent.nav[i]);
+//nav bar color changer
+const navEl = document.querySelectorAll('nav a');
+navEl.forEach((item) => {
+  item.style.color = 'green';
+});
 
 // cta section
 const ctaButton = document.querySelector('.cta-text button').textContent = siteContent['cta']['button'];
