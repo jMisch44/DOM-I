@@ -41,8 +41,6 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-//line break
-const lineBreak = document.createElement("br");
 
 //nav bar
 let navBarFirst = document.querySelector('nav a:nth-child(1)');
@@ -63,17 +61,36 @@ navBarFifth.textContent = siteContent['nav']['nav-item-5'];
 let navBarSixth = document.querySelector('nav a:nth-child(6)');
 navBarSixth.textContent = siteContent['nav']['nav-item-6'];
 
-//cta section
-const ctaHeading = document.querySelector('.cta-text h1').textContent = siteContent['cta']['h1'];
+// const navEl = document.querySelectorAll('nav a');
 
+
+const firstEl = document.createElement('p');
+firstEl.textContent = 'Example 1';
+const nav = document.querySelector('nav');
+
+const secondEl = document.createElement('p');
+secondEl.textContent = 'Example 2';
+nav.appendChild(secondEl);
+nav.prepend(firstEl);
+nav.style.color = 'green';
+
+
+navBarFirst.style.color = 'green';
+navBarSecond.style.color = 'green';
+navBarThird.style.color = 'green';
+navBarFourth.style.color = 'green';
+navBarFifth.style.color = 'green';
+navBarSixth.style.color = 'green';
+
+// let navBar = document.querySelectorAll('a');
+// navBar.forEach((item, i) => item.textContent = object.values(siteContent.nav[i]);
+
+// cta section
 const ctaButton = document.querySelector('.cta-text button').textContent = siteContent['cta']['button'];
 
 const ctaImg = document.querySelector('#cta-img').setAttribute('src', siteContent['cta']['img-src']);
-
-//arrays for breaks
-const ctaHeadingArray = Array.from(ctaHeading);
-console.log(ctaHeadingArray);
-
+const ctaHeading = document.querySelector('.cta-text h1');
+ctaHeading.innerHTML = 'DOM </br> Is </br> Awesome';
 
 //main-content section
 
@@ -126,7 +143,8 @@ contactHeading.textContent = siteContent['contact']['contact-h4'];
 let contactParas = document.querySelectorAll('.contact p');
 
 let contactAddress = contactParas[0];
-contactAddress.textContent = siteContent['contact']['address'];
+contactAddress.innerHTML = '123 Way 456 Street </br> Somewhere, USA'
+
 
 let contactPhoneNumber = contactParas[1];
 contactPhoneNumber.textContent = siteContent['contact']['phone'];
